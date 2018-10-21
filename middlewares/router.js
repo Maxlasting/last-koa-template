@@ -1,12 +1,11 @@
-const { createRouter } = require('../decorators')
+const decorators = require('../decorators')
 const { join } = require('path')
-const config = require('../config.js')
 
 const routesPath = join(__dirname, '../routes/')
 
-const routes = config.routes
+const routes = ['default']
 
-module.exports = app => createRouter(
+module.exports = app => decorators.createRouter(
   app,
   routesPath,
   routes
