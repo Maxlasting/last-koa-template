@@ -25,32 +25,6 @@ const _covert = middleware => (target, key, descriptor) => {
   return descriptor
 }
 
-const local = _covert(async (ctx, next) => {
-  const allowed = ctx.req.headers['x-request-allowed'] === 'yes'
-  if (allowed) {
-    ctx.local = true
-  }
-  await next()
-})
-
-const auth = _covert(async (ctx, next) => {
-  const user = ctx.session.user
-  if (!user && !ctx.local) {
-    ctx.body = { success: false, code: 401, msg: '授权数据失效!' }
-  } else {
-    await next()
-  }
-})
-
-const admin = _covert(async (ctx, next) => {
-  const user = ctx.session.user
-  if (user.role !== 'admin') {
-    ctx.body = { success: false, code: 401, msg: '权限不够' }
-  } else {
-    await next()
-  }
-})
-
 const required = (params) => _covert(async (ctx, next) => {
   let errs = []
 
@@ -84,4 +58,4 @@ const createRouter = (app, routesPath, routes) => {
   return router
 }
 
-module.exports = { ...methodsList, createRouter, prefix, local, auth, admin, required }
+module.exports = { ...methodsList, createRouter, prefix, required }
