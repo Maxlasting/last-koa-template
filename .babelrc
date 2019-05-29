@@ -1,8 +1,5 @@
 {
-  "presets": [
-    "stage-1"
-  ],
   "plugins": [
-    "transform-decorators-legacy"
+    ["@babel/plugin-proposal-decorators", { "legacy": true }]
   ]
 }

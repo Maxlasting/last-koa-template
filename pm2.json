@@ -1,14 +1,14 @@
 {
-  "name": "www",
-  "script": "./index.js",
-  "watch": false,
+  "env": {
+    "NODE_ENV": "production",
+    "PORT": 3333
+  },
   "exec_mode": "fork",
   "instances": "max",
+  "watch": false,
   "ignore_watch": [
     "node_modules"
   ],
-  "env": {
-    "NODE_ENV": "production",
-    "PORT": 3000
-  }
+  "name": "admin",
+  "script": "index.js"
 }
