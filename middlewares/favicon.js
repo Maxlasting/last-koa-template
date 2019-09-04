@@ -3,6 +3,6 @@ const { join } = require('path')
 
 module.exports = app => app.use(
   favicon(
-    join(__dirname, '../favicon.png')
+    join(__dirname, '../logo.png')
   )
 )

@@ -1,15 +1,17 @@
-const isDev = process.env.NODE_ENV === 'development'
-
 module.exports = {
+  middlewares: [
+    'catcher',
+    'favicon',
+    'render',
+    'cors',
+    'body',
+    'send',
+    'create-router',
+  ],
   routes: [
     'default.route'
   ],
-  middlewares: [
-    'catch-errors',
-    'favicon',
-    'render-html',
-    'body',
-    'router'
-  ],
-  database: 'mongodb://127.0.0.1:27017/test'
+  sockets: [
+    'default.socket'
+  ]
 }

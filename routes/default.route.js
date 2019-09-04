@@ -1,13 +1,9 @@
-const core = require('../core/index.js')
-const createData = require('../utils/create-data.js')
+const core = require('../core')
 
 @core.prefix('/')
-class __decorator_default_router__ {
-  @core.get('/test')
-  async _route_01_ (ctx) {
-    const data = await createData(async () => {
-      return 'ok'
-    })
-    ctx.body = data
+class _decorator_default_router_ {
+  @core.get('*')
+  async _route_00_ (ctx) {
+    ctx.render('404')
   }
 }

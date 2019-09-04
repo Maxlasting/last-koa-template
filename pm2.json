@@ -1,14 +1,1 @@
-{
-  "env": {
-    "NODE_ENV": "production",
-    "PORT": 3333
-  },
-  "exec_mode": "fork",
-  "instances": "max",
-  "watch": false,
-  "ignore_watch": [
-    "node_modules"
-  ],
-  "name": "admin",
-  "script": "index.js"
-}
+{ "name": "WebRTC", "exec_mode": "fork", "instances": "max", "watch": false, "ignore_watch": [ "node_modules" ], "script": "app.js", "env": { "NODE_ENV": "production", "PORT": 8081 } }
